@@ -60,6 +60,7 @@ function commitRoot() {
   deletions.length = 0
   currentRoot = workInProgressRoot // 把当前渲染成功的根 fiber 赋给 currentRoot 
   currentRoot.firstEffect = null
+  currentRoot.lastEffect = null
   workInProgressRoot = null
 }
 
@@ -247,6 +248,8 @@ function reconcileChildren(currentFiber, newChildren) {
         newFiber.return = currentFiber
         newFiber.effectTag = UPDATE
         newFiber.nextEffect = null
+        newFiber.firstEffect = null
+        newFiber.lastEffect = null
         newFiber.updateQueue = oldChild.updateQueue || new UpdateQueue()
       } else {
         newFiber = {

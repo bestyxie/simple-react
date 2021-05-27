@@ -31,29 +31,3 @@ export class UpdateQueue {
     return state
   }
 }
-
-// const queue = [
-//   {
-//     a: state + 1,
-//   },
-//   {
-//     a: state + 1,
-//   },
-//   prev => {
-//     return {
-//       a: prev.a + 1,
-//     }
-//   },
-// ]
-
-// queue.reduce((result, item) => {
-//   if (!result || typeof item !== 'function') {
-//     result = {
-//       ...result,
-//       ...item,
-//     }
-//   } else {
-//     result = item(result)
-//   }
-//   return result
-// }, null)
